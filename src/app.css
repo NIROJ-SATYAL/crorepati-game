@@ -1,0 +1,282 @@
+.app {
+    height: 100vh;
+    display: flex;
+    background-color: #020230;
+    color: white;
+}
+
+.main {
+    width: 75%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), #020230), url("./assets/bg.jpg") center;
+    display: flex;
+    flex-direction: column;
+}
+.top{
+    height: 50%;
+    position: relative;
+}
+.timer{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    background-color: black;
+}
+.timer:hover{
+    background-color: black;
+    opacity: 0.3;
+}
+.buttom {
+    height: 50%;
+   
+}
+.trivia{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.question{
+    width: 80%;
+    border: 3px solid white;
+    background-color: black;
+    opacity: 0.7;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+   
+}
+.question:hover{
+    opacity: 1;
+}
+.answers{
+width: 80%;
+display: flex;
+justify-content: center;
+
+flex-wrap: wrap;
+}
+.answer{
+    width: 40%;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+    background-color: black;
+    cursor: pointer;
+    
+
+}
+.answer:hover,.answer.active{
+    background-color: green;
+}
+.answer.correct{
+   animation: correct 3s ease forwards;
+}
+
+@keyframes correct{
+    0%,22%,42%{
+        background-color: green;
+    }
+    20%,40%,60%{
+        background-color: red;
+    }
+    62%,100%{
+        background-color: green;
+    }
+}
+.answer.wrong {
+    animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+
+    0%,
+    22%,
+    42% {
+        background-color: red;
+    }
+
+    20%,
+    40%,
+    60% {
+        background-color: green;
+    }
+
+    62%,
+    100% {
+        background-color: red;
+    }
+}
+
+
+.money {
+    width: 255px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.money-list {
+    list-style: none;
+    width: 100%;
+    padding: 20px;
+}
+.money-item{
+display: flex;
+align-items: center;
+padding: 5px;
+border-radius: 5px;
+}
+.money-item.active{
+    background-color:black;
+}
+.endtext{
+    position: relative;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.start{
+    height: 150px;
+    width: 250px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    margin: auto;
+   
+}
+.startinput{
+    border-radius: 10px;
+   width: 100%;
+   height:30px;
+   text-align: center;
+   font-weight: 400;
+}
+
+.startinput:focus{
+    outline: none;
+}
+.startbtn{
+    width: 100%;
+    height: 30px;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .main {
+        width: 100%;
+    }
+
+    .top {
+        height: 40%;
+    }
+
+    .timer {
+        height: 50px;
+        width: 50px;
+        font-size: 12px;
+    }
+
+    .question {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .answer {
+        width: 80%;
+        font-size: 14px;
+        margin: 10px;
+    }
+
+    .money {
+        width: 100%;
+    }
+}
+
+/* For screens larger than 768px */
+@media (min-width: 769px) {
+    .main {
+        width: 75%;
+    }
+
+    .top {
+        height: 50%;
+    }
+
+    .timer {
+        height: 70px;
+        width: 70px;
+        font-size: 16px;
+    }
+
+    .question {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .answer {
+        width: 40%;
+        font-size: 16px;
+        margin: 20px;
+    }
+
+    .money {
+        width: 255px;
+    }
+}
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.radio input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.radio input[type="radio"]:checked+.radio-label {
+    font-weight: bold;
+}
+
+.radio .radio-label {
+    cursor: pointer;
+    color: white;
+}
